@@ -7,17 +7,46 @@
     <link rel="stylesheet" href="style.css">
     <title>Projeto 4</title>
 </head>
+<script>
+    function botão(){
+        var img = document.getElementById('imgbotao')
+        img.setAttribute('src','images/icon-arrow2.svg')
+        
+    }
+    function dxbotão(){
+        var img = document.getElementById('imgbotao')
+        img.setAttribute('src','images/icon-arrow1.svg')
+    }
+
+    function input(){
+        var inputemail = document.getElementById('inputemail') 
+        inputemail.setAttribute('value','')
+    }
+    function inputdx(){
+        var inputemail = document.getElementById('inputemail')
+        inputemail.setAttribute('value','Endereço de Email') 
+    }
+
+    function nenviou(){
+        var img = document.getElementById('imgbotao')
+        img.setAttribute('src','images/icon-error.svg') 
+       
+        
+    }
+</script>
 <body>
     <div id="corpo">
         <div id="texto">
-            <img src="images/logo.svg" alt="logo da Base Apparel" id="logo">
+            <div><img src="images/logo.svg" alt="logo da Base Apparel" id="logo"></div>
+            <div id="foto2"></div>
             <h1><span>ESTAMOS</span> CHEGANDO EM BREVE</h1>
-            <p>Olá, queridos compradores! Nós estamos construindo nossa nova loja de roupas. Adicione seu email abaixo para fica por dentro de anúncios e ofertas de lançamento</p>
-            <form action=""><input type="email" value="Endereço de Email" required >
-            <button type="submit" onsubmit=""><img src="images/icon-arrow1.svg" alt="desenho de seta"></button></form>
+                <p>Olá, queridos compradores! Nós estamos construindo nossa nova loja de roupas. Adicione seu email abaixo para fica por dentro de anúncios e ofertas de lançamento</p>
+            <form action="" ><input type="email" value="Endereço de Email" required id="inputemail" onfocus="input()" onfocusout="inputdx()" oninvalid="nenviou()" >
+            <button type="submit"  onmouseover="botão()" onmouseout="dxbotão()"><img src="images/icon-arrow1.svg" alt="desenho de seta" id="imgbotao"></button></form>
         </div>
         <div id="foto">
             <picture>
+                <source media="(max-width:680px )" srcset="images/hero-mobile.jpg">
                 <img src="images/hero-desktop.jpg" alt="foto de mulher">
             </picture>
         </div>
